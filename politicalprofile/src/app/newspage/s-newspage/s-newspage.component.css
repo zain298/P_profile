@@ -1,0 +1,156 @@
+/* @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500,700); */
+.banner8 {
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Poppins",sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.banner8 h1, .banner8 h2, .banner8 h3, .banner8 h4, .banner8 h5, .banner8 h6 {
+  color: #3e4555;
+}
+
+.banner8 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+}
+
+.banner8 a {
+  color: #263238;
+}
+
+.banner8 a:hover {
+  color: #316ce8;
+}
+
+.banner8 .blog-row h5 {
+  font-weight: 500;
+  margin-top: 10px;
+	font-size: 18px;
+}
+
+.banner8 .text-themecolor {
+    color: #316ce8;
+}
+
+.banner8 .btn-danger-gradiant {
+  background: #ff4d7e;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ff4d7e 0%, #ff6a5b 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff4d7e), to(#ff6a5b));
+  background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+}
+
+ .banner8 .btn-danger-gradiant:hover {
+  background: #ff6a5b;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ff6a5b 0%, #ff4d7e 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff6a5b), to(#ff4d7e));
+  background: -webkit-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+  background: -o-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+  background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
+}
+
+.banner8 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}
+
+.banner8 .text-danger {
+    color: #ff4d7e !important;
+}
+
+
+/* card css */
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800);
+.blog-home3 {
+  font-family: "Montserrat", sans-serif;
+  color: #8d97ad;
+  font-weight: 300;
+}
+
+.blog-home3 h1,
+.blog-home3 h2,
+.blog-home3 h3,
+.blog-home3 h4,
+.blog-home3 h5,
+.blog-home3 h6 {
+  color: #3e4555;
+}
+
+.blog-home3 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+.blog-home3 h6 {
+  color:black;
+  font-weight: 600;
+  line-height: 22px;
+  font-size: 12px;
+}
+.blog-home3 a.link {
+    color: #3e4555;
+}
+
+.blog-home3 a.link:hover {
+    color: #316ce8;
+}
+
+.blog-home3 .font-weight-medium {
+  font-weight: 500;
+}
+
+.blog-home3 .bg-light {
+  background-color: #f4f8fa !important;
+}
+
+.blog-home3 .subtitle {
+  color: #8d97ad;
+  line-height: 24px;
+}
+
+.blog-home3 .card.card-shadow {
+  -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+  box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+}
+
+.blog-home3 .on-hover {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.blog-home3 .on-hover:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.blog-home3 .bg-success-gradiant {
+  background: #2cdd9b;
+  background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+  background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+  background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+  background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+}
+
+.blog-home3 .date-pos {
+  font-size: 12px;
+}
+
+.blog-home3 a {
+  overflow: hidden;
+}
+
+.blog-home3 a img {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.blog-home3 a img:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
