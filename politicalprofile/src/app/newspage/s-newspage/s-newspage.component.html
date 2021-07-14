@@ -13,7 +13,7 @@
           <div class="card border-0 mb-4" *ngIf="retrievedImage">
             <img
               class="card-img-top"
-              src="retrievedImage"
+              src="{{ retrievedImage }}"
               alt="wrappixel kit"
               height="300px"
             />
@@ -81,11 +81,18 @@
           >
             <div class="row blog-row mt-1 mb-2">
               <div class="col-md-4 mt-1" style="padding: 0; margin-left: auto">
-                <img
-                  src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img14.jpg"
-                  alt="wrapkit"
-                  class="img-fluid"
-                />
+                <div *ngFor="let image of imageResponse">
+                  <div *ngIf="image.id === recent.imageId">
+                    <div *ngIf="retrievedImage">
+                      <img
+                        *ngIf="retrievedImage"
+                        class="img-fluid"
+                        src="data:image/jpeg;base64,{{ image.image }}"
+                        alt="{{ image.id }}"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-md-8 blog-home3">
                 <h6>

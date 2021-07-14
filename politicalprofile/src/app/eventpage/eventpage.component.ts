@@ -9,18 +9,15 @@ import { Variable } from '@angular/compiler/src/render3/r3_ast';
   styleUrls: ['./eventpage.component.css'],
 })
 export class EventpageComponent implements OnInit {
+  // retrieveResonse: any;
+  imageResonse: any;
+  base64Data: any;
+  retrievedImage: any;
   constructor(
     private httpClient: HttpClient,
     private eventsService: EventpageService
   ) {}
-  lists = [
-    { id: 0, title: 'ali' },
-    { id: 1, title: 'atim' },
-    { id: 2, title: 'talha' },
-    { id: 3, title: 'ubaid' },
-    { id: 4, title: 'jameel' },
-    { id: 5, title: 'zain' },
-  ];
+
   eventsformationAll = [] as any;
   //  eventsformationAll: string[] = [];
   ngOnInit() {
@@ -36,11 +33,25 @@ export class EventpageComponent implements OnInit {
             console.log(response);
           } else {
             this.eventsformationAll = response;
-            console.log(this.eventsformationAll);
+            // console.log(this.eventsformationAll);
+            this.getAllImages();
           }
         }
       },
       (error) => {}
     );
+  }
+  getAllImages() {
+    this.httpClient
+      .get('https://testing-spring-app.herokuapp.com/image/all')
+      .subscribe((res: any) => {
+        console.log(res);
+        this.imageResonse = res;
+
+        this.base64Data = this.imageResonse.image;
+        // console.log(this.base64Data);
+        this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        // console.log(this.retrievedImage);
+      });
   }
 }

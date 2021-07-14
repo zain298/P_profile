@@ -111,19 +111,24 @@
         </div>
       </div>
       <!-- Column -->
-      <div class="col-md-3" *ngFor="let item of eventsformationAll">
-       
+      <div class="col-md-3" *ngFor="let event of eventsformationAll">
         <!-- <div class="container" style="background-color: #c08c99"> -->
         <div
           class="card border-0 mb-4 on-hover"
           style="background-color: #e0e4d6"
         >
-          <a href="#"
-            ><img
-              class="card-img-top"
-              src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img1.jpg"
-              alt="wrappixel kit"
-          /></a>
+          <div *ngFor="let image of imageResonse">
+            <div *ngIf="image.id === event.imageId">
+              <div *ngIf="retrievedImage">
+                <img
+                  *ngIf="retrievedImage"
+                  class="card-img-top"
+                  src="data:image/jpeg;base64,{{ image.image }}"
+                  alt="{{ image.id }}"
+                />
+              </div>
+            </div>
+          </div>
           <div
             class="
               date-pos
@@ -136,17 +141,18 @@
               position-absolute
             "
           >
-            Oct<span class="d-block">23</span>
+            {{ event.date | date: "MMM" }}
+            <span class="d-block">{{ event.date | date: "d" }}</span>
           </div>
           <div class="container">
             <h5 class="font-weight-medium mt-3">
-              <a href="#" class="text-decoration-none link"
-                >Learn from small things to create something bigger.</a
-              >
+              <a href="#" class="text-decoration-none link">{{
+                event.title
+              }}</a>
             </h5>
-            <p class="mt-3"></p>
+            <p class="mt-3">{{ event.venue }}</p>
           </div>
-          {{ item.id }}
+
           <!-- <span style="padding: 6px 10px">
               <a
                 href="#"

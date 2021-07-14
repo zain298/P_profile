@@ -260,11 +260,19 @@
               <a
                 routerLink="/Snews/:{{ news.id }}"
                 style="text-decoration: none"
-                ><img
-                  class="card-img-top"
-                  src="assets\img\about-img.jpg"
-                  alt="wrappixel kit"
-                />
+              >
+                <div *ngFor="let image of retrieveResonse">
+                  <div *ngIf="image.id === news.imageId">
+                    <div *ngIf="retrievedImage">
+                      <img
+                        *ngIf="retrievedImage"
+                        class="card-img-top"
+                        src="data:image/jpeg;base64,{{ image.image }}"
+                        alt="{{ image.id }}"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="
                     date-pos

@@ -13,7 +13,7 @@ export class SNewspageComponent implements OnInit {
   id: string | null | undefined;
   recentNewsAll = [] as any;
   SingalNews = [] as any;
-
+  imageResponse = [] as any;
   imageID: string | undefined;
   retrievedImage: any;
   base64Data: any;
@@ -30,14 +30,15 @@ export class SNewspageComponent implements OnInit {
       this.id = params.get('id');
       // let id = toInteger(params.get('id'));
       // console.log(id + typeof id);
-      // console.log(params);
-      // console.log('id: ' + this.id);
-      // console.log('type of id: ' + typeof this.id);
+      console.log(params);
+      console.log('id: ' + this.id);
+      console.log('type of id: ' + typeof this.id);
       this.getid(this.id);
+
+      this.getSingleNews(this.id);
     });
 
     this.getAllRecentNews();
-    this.getSingleNews(this.id);
   }
   getid(id: any) {
     let d = id.split(':');
@@ -60,6 +61,7 @@ export class SNewspageComponent implements OnInit {
         } else {
           this.recentNewsAll = response;
           // console.log(this.recentNewsAll);
+          this.getAllImages();
         }
       }
     });
@@ -79,14 +81,29 @@ export class SNewspageComponent implements OnInit {
       }
     });
   }
+  getAllImages() {
+    this.httpClient
+      .get('https://testing-spring-app.herokuapp.com/image/all')
+      .subscribe((res: any) => {
+        console.log(res);
+        this.imageResponse = res;
+
+        this.base64Data = this.retrieveResonse.image;
+        // console.log(this.base64Data);
+        this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        // console.log(this.retrievedImage);
+      });
+  }
   getSingleImage(id: any) {
     this.httpClient
       .get('https://testing-spring-app.herokuapp.com/image/' + id)
       .subscribe((res) => {
         console.log(res);
         this.retrieveResonse = res;
-        this.base64Data = this.retrieveResonse.picByte;
+        this.base64Data = this.retrieveResonse.image;
+        // console.log(this.base64Data);
         this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        // console.log(this.retrievedImage);
       });
   }
 }
