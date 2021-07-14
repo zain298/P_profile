@@ -30,6 +30,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NewsBannerComponent } from './newspage/news-banner/news-banner.component';
 import { SNewspageComponent } from './newspage/s-newspage/s-newspage.component';
 import { EventpageBannerComponent } from './eventpage/eventpage-banner/eventpage-banner.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { EventpageBannerComponent } from './eventpage/eventpage-banner/eventpage
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    HttpClientModule,
+    CommonModule,
 
     // ngx-modules-imports
     BsDropdownModule.forRoot(),

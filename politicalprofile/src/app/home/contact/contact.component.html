@@ -1007,6 +1007,7 @@
                       class="form-control"
                       type="text"
                       placeholder="name"
+                      ([ngModel])="(emailinfo.name)"
                     />
                   </div>
                 </div>
@@ -1015,6 +1016,7 @@
                     <input
                       class="form-control"
                       type="email"
+                      ([ngModel])="(emailinfo.email)"
                       placeholder="email address"
                     />
                   </div>
@@ -1025,6 +1027,8 @@
                       class="form-control"
                       type="text"
                       placeholder="phone"
+                      formControlName="phone"
+                      ([ngModel])="(emailinfo.phone)"
                     />
                   </div>
                 </div>
@@ -1034,12 +1038,14 @@
                       class="form-control"
                       rows="3"
                       placeholder="message"
+                      formControlName="message"
+                      ([ngModel])="(emailinfo.message)"
                     ></textarea>
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <button
-                    type="submit"
+                    type=""
                     class="
                       btn btn-danger-gradiant
                       mt-3
@@ -1048,6 +1054,7 @@
                       px-3
                       py-2
                     "
+                    (click)="onSubmit(emailinfo)"
                   >
                     <span> SUBMIT</span>
                   </button>

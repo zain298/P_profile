@@ -10,17 +10,18 @@
             newsletter
           </h6> -->
         <div class="col-lg-12">
-          <div class="card border-0 mb-4">
+          <div class="card border-0 mb-4" *ngIf="retrievedImage">
             <img
               class="card-img-top"
-              src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img4.jpg"
+              src="retrievedImage"
               alt="wrappixel kit"
               height="300px"
             />
             <div
               class="date-pos text-center text-white p-3 bg-success-gradiant"
             >
-              JOHN DOE &nbsp; &nbsp; SEPT 15, 2017
+              {{ SingalNews.author | uppercase }} &nbsp; &nbsp;
+              {{ SingalNews.date | date }}
             </div>
             <div class="container">
               <h5 class="font-weight-medium mt-3">
@@ -117,7 +118,11 @@
             </div>
           </div>
         </a>
-        <a routerLink="/Snews" style="text-decoration: none">
+        <a
+          routerLink="/Snews/:{{ recent.id }}"
+          style="text-decoration: none"
+          *ngFor="let recent of recentNewsAll"
+        >
           <div
             class="card my-2"
             style="background-color: #f8f9fc; overflow: hidden"
@@ -132,10 +137,11 @@
               </div>
               <div class="col-md-8 blog-home3">
                 <h6>
-                  The Universe is all of time and space and its contents. The
-                  Universe is all of time and space and its contents.
+                  {{ recent.title }}
                 </h6>
-                <p style="margin-bottom: 2px">by Mark Freeman / 23 May 2017</p>
+                <p style="margin-bottom: 2px">
+                  by {{ recent.author }} / {{ recent.date | date }}
+                </p>
               </div>
             </div>
           </div>

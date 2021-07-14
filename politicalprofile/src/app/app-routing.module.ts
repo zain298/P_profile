@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'news',
     component: NewspageComponent,
   },
-  { path: 'Snews', component: SNewspageComponent },
+  { path: 'Snews/:id', component: SNewspageComponent },
 ];
 
 @NgModule({

@@ -254,6 +254,59 @@
               </div>
             </div>
           </div>
+          <!-- from Apis -->
+          <div class="col-md-3" *ngFor="let news of newsformationAll">
+            <div class="card on-hover border-0 mb-4">
+              <a
+                routerLink="/Snews/:{{ news.id }}"
+                style="text-decoration: none"
+                ><img
+                  class="card-img-top"
+                  src="assets\img\about-img.jpg"
+                  alt="wrappixel kit"
+                />
+                <div
+                  class="
+                    date-pos
+                    text-center text-white
+                    p-3
+                    bg-success-gradiant
+                  "
+                >
+                  {{ news.auther }} {{ news.author | uppercase }} &nbsp; &nbsp;
+                  {{ news.date | date: "mediumDate" }}
+                </div>
+                <div class="container">
+                  <h5 class="font-weight-medium mt-3">
+                    <!-- {{ news.title }} -->
+                  </h5>
+                  <p class="m-t-20" style="color: black">
+                    <span
+                      style="
+                        display: inline-block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 13ch;
+                      "
+                    >
+                      <div
+                        [innerHTML]="news.description"
+                        style="
+                          display: inline-block;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          max-width: 13ch;
+                        "
+                      ></div>
+                    </span>
+                  </p>
+                  <!-- <div [innerHTML]="news.description"></div> -->
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Column -->
