@@ -81,7 +81,7 @@ export class SNewspageComponent implements OnInit {
   }
   getSingleImage(id: any) {
     this.httpClient
-      .get('https://testing-spring-app.herokuapp.com/news/image/' + id)
+      .get('https://testing-spring-app.herokuapp.com/image/' + id)
       .subscribe((res) => {
         console.log(res);
         this.retrieveResonse = res;
