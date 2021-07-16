@@ -1,9 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EventsService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getAll(): Observable<any> {
+    return this.http.get('https://testing-spring-app.herokuapp.com/event/all');
+  }
 }

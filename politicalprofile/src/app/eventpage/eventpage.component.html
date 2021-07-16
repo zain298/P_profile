@@ -1,11 +1,22 @@
 <!-- <app-eventpage-banner></app-eventpage-banner> -->
-<div class="blog-home2 py-5" style="margin-top: 10vh">
+<div class="blog-home2 py-5" style="margin-top: 20vh">
   <div class="container">
     <!-- Row  -->
     <div class="row justify-content-center">
       <!-- Column -->
       <div class="col-md-8 text-center">
-        <h1 class="my-3">Upcoming Events</h1>
+        <h1
+          class="my-3"
+          style="
+            letter-spacing: 2px;
+            font-size: x-large;
+            font-weight: 600;
+            color: #c60013;
+            user-select: none;
+          "
+        >
+          Upcoming Events
+        </h1>
         <h3 class="font-weight-normal">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
@@ -13,8 +24,6 @@
           fugiat iusto fuga praesentium optio.
         </h3>
       </div>
-      <!-- Column -->
-      <!-- Column -->
     </div>
     <div class="row mt-4 d-flex justify-content-center">
       <!-- Column -->
@@ -27,7 +36,7 @@
             <a href="#"
               ><img
                 class="card-img-top"
-                src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img3.jpg"
+                src="assets/img/event2.jpg"
                 alt="wrappixel kit"
             /></a>
             <div
@@ -45,77 +54,26 @@
               Oct<span class="d-block">23</span>
             </div>
             <div class="container">
-              <h5 class="font-weight-medium mt-3">
-                <a routerLink="events" class="text-decoration-none link"
-                  >You should have eagle’s eye on new trends and techonogies</a
-                >
+              <h5 class="font-weight-medium mt-3" style="user-select: none">
+                You should have eagle’s eye on new trends and techonogies
               </h5>
-              <p class="mt-3" style="color: black">
+              <p class="mt-3" style="user-select: none; color: #c60013">
                 Business Park, Opp. Corns Sam Restaurant, New Yoark, US
               </p>
             </div>
-            <!-- <span style="padding: 6px 10px">
-              <a
-                href="#"
-                class="text-decoration-none linking text-themecolor mt-2"
-                >Learn More</a
-              >
-            </span> -->
           </div>
         </a>
       </div>
-      <!-- Column -->
-      <div class="col-md-3">
-        <div
-          class="card border-0 mb-4 on-hover"
-          style="background-color: #e0e4d6"
-        >
-          <a href="#"
-            ><img
-              class="card-img-top"
-              src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img2.jpg"
-              alt="wrappixel kit"
-          /></a>
-          <div
-            class="
-              date-pos
-              bg-info-gradiant
-              p-2
-              d-inline-block
-              text-center
-              rounded
-              text-white
-              position-absolute
-            "
-          >
-            Oct<span class="d-block">23</span>
-          </div>
-          <div class="container">
-            <h5 class="font-weight-medium mt-3">
-              <a href="#" class="text-decoration-none link"
-                >New Seminar on Newest Food Recipe from World’s Best</a
-              >
-            </h5>
-            <p class="mt-3">
-              Business Park, Opp. Corns Sam Restaurant, New Yoark, US
-            </p>
-          </div>
 
-          <!-- <span style="padding: 6px 10px">
-              <a
-                href="#"
-                class="text-decoration-none linking text-themecolor mt-2"
-                >Learn More</a
-              >
-            </span> -->
-        </div>
-      </div>
       <!-- Column -->
       <div class="col-md-3" *ngFor="let event of eventsformationAll">
         <!-- <div class="container" style="background-color: #c08c99"> -->
+        <!-- date compare -->
+        <!-- *ngIf="event.date >= today" -->
+        <!--  -->
         <div
           class="card border-0 mb-4 on-hover"
-          style="background-color: #e0e4d6"
+          style="background-color: #e0e4d6; max-height: 324.23px"
         >
           <div *ngFor="let image of imageResonse">
             <div *ngIf="image.id === event.imageId">
@@ -140,17 +98,18 @@
               text-white
               position-absolute
             "
+            style="width: 50.72px; height: 66px"
           >
             {{ event.date | date: "MMM" }}
             <span class="d-block">{{ event.date | date: "d" }}</span>
           </div>
-          <div class="container">
-            <h5 class="font-weight-medium mt-3">
-              <a href="#" class="text-decoration-none link">{{
-                event.title
-              }}</a>
+          <div class="container" style="height: 150px">
+            <h5 class="font-weight-medium mt-3" style="user-select: none">
+              {{ event.title }}
             </h5>
-            <p class="mt-3">{{ event.venue }}</p>
+            <p class="mt-3" style="user-select: none; color: #c60013">
+              {{ event.venue }}
+            </p>
           </div>
 
           <!-- <span style="padding: 6px 10px">

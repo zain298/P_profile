@@ -10,7 +10,11 @@
             newsletter
           </h6> -->
         <div class="col-lg-12">
-          <div class="card border-0 mb-4" *ngIf="retrievedImage">
+          <div
+            class="card border-0 mb-4"
+            *ngIf="retrievedImage"
+            style="background-color: #efefef"
+          >
             <img
               class="card-img-top"
               src="{{ retrievedImage }}"
@@ -19,15 +23,40 @@
             />
             <div
               class="date-pos text-center text-white p-3 bg-success-gradiant"
+              style="
+                letter-spacing: 2px;
+                font-size: medium;
+                font-weight: 600;
+
+                user-select: none;
+              "
             >
               {{ SingalNews.author | uppercase }} &nbsp; &nbsp;
               {{ SingalNews.date | date }}
             </div>
             <div class="container">
               <h5 class="font-weight-medium mt-3">
-                Techonologies started to change Drastically
+                {{ SingalNews.title }}
               </h5>
               <p class="m-t-20">
+                <span>
+                  <!-- <div [innerHTML]="news.description"></div> -->
+                  <div [innerHTML]="SingalNews.title"></div>
+                </span>
+                <span>
+                  You can relay on our amazing features list and also our
+                  customer services will be great experience. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. You can relay on our
+                  amazing features list and also our customer services will be
+                  great experience. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </span>
+
+                <span>
+                  <!-- <div [innerHTML]="news.description"></div> -->
+                  <div [innerHTML]="SingalNews.title"></div>
+                </span>
+
                 You can relay on our amazing features list and also our customer
                 services will be great experience. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. You can relay on our amazing
@@ -35,37 +64,37 @@
                 experience. Lorem ipsum dolor sit amet, consectetur adipiscing
                 elit. You can relay on our amazing features list and also our
                 customer services will be great experience. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. You can relay on our
-                amazing features list and also our customer services will be
-                great experience. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. You can relay on our amazing features list and
-                also our customer services will be great experience. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit.
+                sit amet, consectetur adipiscing elit.
               </p>
             </div>
           </div>
         </div>
       </div>
       <!-- column  -->
-      <div
-        class="col-lg-4 ml-auto"
-        style="
-          background: rgb(255, 255, 255);
-          background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(191, 200, 234, 1) 28%
-          );
-        "
-      >
+      <div class="col-lg-4 ml-auto" style="background: #0079ac">
         <div class="d-block d-md-flex border-bottom text-uppercase">
           <!-- <h6 class="no-shrink font-weight-medium align-self-center m-b-0">
             Latest News At WrapKit
           </h6> -->
-          <h5 class="font-weight-medium align-self-center m-b-0">
-            Recent News
-          </h5>
-          <a class="ml-auto align-self-center text-decoration-none" href="#"
+          <div style="margin-top: 10px">
+            <h5
+              class="font-weight-medium align-self-center m-b-0"
+              style="
+                font-weight: 500;
+                font-size: large;
+                text-decoration: none;
+                color: white;
+                letter-spacing: 2px;
+              "
+            >
+              Recent News
+            </h5>
+          </div>
+
+          <a
+            class="ml-auto align-self-center text-decoration-none"
+            routerLink="/news"
+            style="text-decoration: none; color: #f8f9fc"
             >View All</a
           >
         </div>
@@ -77,7 +106,7 @@
         >
           <div
             class="card my-2"
-            style="background-color: #f8f9fc; overflow: hidden"
+            style="background-color: #efefef; overflow: hidden"
           >
             <div class="row blog-row mt-1 mb-2">
               <div class="col-md-4 mt-1" style="padding: 0; margin-left: auto">

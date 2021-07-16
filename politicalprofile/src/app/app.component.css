@@ -49,7 +49,8 @@
 
 .header1 .h1-nav .navbar-nav .nav-item .nav-link:hover {
   font-weight: 500;
-  color: #2cdd9b;
+  /* color: #2cdd9b; */
+  color: #0091C5;
 }
 
 .header1 .h1-nav .navbar-nav .nav-item {
@@ -78,7 +79,8 @@
 
 .header1 .navbar-nav .dropdown-menu.b-none {
   -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
-  box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+  box-shadow: 0px 0px 30px rgba(209, 23, 157, 0.1);
+
 }
 .container{
   /* background-color: coral; */
@@ -86,5 +88,7 @@
   margin-right: 0px;   */
 }
 .big-container{
-  background-color: rgba(0, 0, 0, 0.589);
+  /* background-color: rgba(0, 0, 0, 0.589); */
+  /* background-color: rgb(209 23 14 / 88%); */
+  background-color: RGB(188, 24, 35);
 }

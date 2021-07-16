@@ -2,6 +2,7 @@ import { EventpageService } from './eventpage.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
+import { NodeWithI18n } from '@angular/compiler';
 
 @Component({
   selector: 'app-eventpage',
@@ -13,12 +14,14 @@ export class EventpageComponent implements OnInit {
   imageResonse: any;
   base64Data: any;
   retrievedImage: any;
+  eventsformationAll = [] as any;
+  now = new Date();
+  today: string = this.now.toISOString();
   constructor(
     private httpClient: HttpClient,
     private eventsService: EventpageService
   ) {}
 
-  eventsformationAll = [] as any;
   //  eventsformationAll: string[] = [];
   ngOnInit() {
     this.getAll();

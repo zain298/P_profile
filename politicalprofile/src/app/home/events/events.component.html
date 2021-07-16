@@ -6,7 +6,18 @@
     <div class="row justify-content-center">
       <!-- Column -->
       <div class="col-md-8 text-center">
-        <h1 class="my-3">Upcoming Events</h1>
+        <h1
+          class="my-3"
+          style="
+            letter-spacing: 2px;
+            font-size: x-large;
+            font-weight: 600;
+            color: #c60013;
+            user-select: none;
+          "
+        >
+          Upcoming Events
+        </h1>
         <h3 class="font-weight-normal">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
@@ -24,8 +35,8 @@
           <div class="card border-0 mb-4" style="background-color: #e0e4d6">
             <img
               class="card-img-top"
-              src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img3.jpg"
-              alt="wrappixel kit"
+              src="assets\img\events\event4-min.jpg"
+              alt=""
             />
             <div
               class="
@@ -43,9 +54,9 @@
             </div>
             <div class="container">
               <h5 class="font-weight-medium mt-3">
-                You should have eagle’s eye on new trends and techonogies
+                Reqruitment of party worker for campaign task of party
               </h5>
-              <p class="mt-3" style="color: rgb(172, 45, 211)">
+              <p class="mt-3" style="color: #c60013; user-select: none">
                 Fawara Chowk, Gujrat
               </p>
             </div>
@@ -59,14 +70,22 @@
           </div>
         </a>
       </div>
+
       <!-- Column -->
-      <div class="col-md-4">
-        <div class="card border-0 mb-4" style="background-color: #e0e4d6">
-          <img
-            class="card-img-top"
-            src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img2.jpg"
-            alt="wrappixel kit"
-          />
+      <div class="col-md-4" *ngFor="let event of eventsformationAll">
+        <div class="card border-0 mb-4" style="background-color: #efefef">
+          <div *ngFor="let image of imageResonse">
+            <div *ngIf="image.id === event.imageId">
+              <div *ngIf="retrievedImage">
+                <img
+                  *ngIf="retrievedImage"
+                  class="card-img-top"
+                  src="data:image/jpeg;base64,{{ image.image }}"
+                  alt="{{ image.id }}"
+                />
+              </div>
+            </div>
+          </div>
           <div
             class="
               date-pos
@@ -78,15 +97,17 @@
               text-white
               position-absolute
             "
+            style="width: 50.72px; height: 66px"
           >
-            Oct<span class="d-block">23</span>
+            {{ event.date | date: "MMM" }}
+            <span class="d-block">{{ event.date | date: "d" }}</span>
           </div>
           <div class="container">
-            <h5 class="font-weight-medium mt-3">
-              New Seminar on Newest Food Recipe from World’s Best
+            <h5 class="font-weight-medium mt-3" style="user-select: none">
+              {{ event.title }}
             </h5>
-            <p class="mt-3" style="color: rgb(172, 45, 211)">
-              University of Gujrat, Gujrat
+            <p class="mt-3" style="color: #c60013; user-select: none">
+              {{ event.venue }}
             </p>
           </div>
 
@@ -100,52 +121,6 @@
         </div>
       </div>
       <!-- Column -->
-      <!-- Little Fixed -->
-      <div class="col-md-4">
-        <!-- <div class="container" style="background-color: #c08c99"> -->
-        <div
-          class="card border-0 mb-4"
-          style="background-color: #e0e4d6; height: 345.64px; width: 356px"
-        >
-          <img
-            height="356px"
-            width="237.641px"
-            class="card-img-top img-fluid"
-            src="assets\img\about-img.jpg"
-            alt="custom"
-          />
-          <div
-            class="
-              date-pos
-              bg-info-gradiant
-              p-2
-              d-inline-block
-              text-center
-              rounded
-              text-white
-              position-absolute
-            "
-          >
-            Oct<span class="d-block">23</span>
-          </div>
-          <div class="container" style="height: 108px; width: 356px">
-            <h5 class="font-weight-medium mt-3">
-              Learn from small things to create something bigger.
-            </h5>
-            <p class="mt-3" style="color: rgb(172, 45, 211)">
-              Jail Chowk, Gujrat
-            </p>
-          </div>
-          <!-- <span style="padding: 6px 10px">
-            <a
-              href="#"
-              class="text-decoration-none linking text-themecolor mt-2"
-              >Learn More</a
-            >
-          </span> -->
-        </div>
-        <!-- </div> -->
-      </div>
     </div>
   </div>
 </div>
